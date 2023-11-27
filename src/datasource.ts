@@ -5,6 +5,8 @@ import { User } from './user/user.entity';
 import { configDotenv } from 'dotenv';
 configDotenv({ path: '../credentials.env' });
 
+//this file will be deleted
+
 const datasource = {
     type: process.env.DATABASE_TYPE,
     username: process.env.DATABASE_USERNAME,
