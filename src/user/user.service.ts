@@ -11,9 +11,9 @@ constructor(@InjectRepository(User) private repo: Repository<User>){
 }
 
 	// chiamato getAll
-	findOne(id: number){
+	findOne(idUser: number){
 // ritornare lista utenti
-		return this.repo.findOneBy({id})
+		return this.repo.findOneBy({idUser})
 }
 
 	create(){}

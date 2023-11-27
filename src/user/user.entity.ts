@@ -5,10 +5,16 @@ export class User {
 // attirbuti
 
 	@PrimaryGeneratedColumn()
-	id: number
+	idUser: number
 
 	@Column()
-	user_name: string
+	username: string
+
+	@Column()
+	password: string
+
+	@Column()
+	email: string
 
 	// TODO add
 }
