@@ -14,7 +14,7 @@ export class Social {
 	url: string
 
     @OneToMany(() => Canale, canale => canale.socials)
-    canale: Canale;  //entità che avra la fk
+    canale: Canale[];
 	
 	
 }

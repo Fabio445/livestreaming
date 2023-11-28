@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Column, Entity, Timestamp, OneToOne, JoinColumn } from "typeorm";
+import { PrimaryGeneratedColumn, Column, Entity, Timestamp, OneToOne, JoinColumn, OneToMany } from "typeorm";
 import { User } from "../../user/entities/user.entity";
 
 
@@ -11,7 +11,8 @@ export class Viewer {
 
 	
     @OneToOne(() => User, user => user.viewer)
-    @JoinColumn()
+    @JoinColumn({name:'idUser'})
     user: User;
+
  }
 

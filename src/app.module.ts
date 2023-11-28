@@ -13,6 +13,7 @@ import { SocialModule } from './social/social.module';
 import { Social } from './social/entities/social.entity';
 import { Canale } from './canale/entities/canale.entity';
 import { PortafoglioModule } from './portafoglio/portafoglio.module';
+import { Portafoglio } from './portafoglio/entities/portafoglio.entity';
 
 
 @Module({
@@ -23,8 +24,8 @@ import { PortafoglioModule } from './portafoglio/portafoglio.module';
       port: 3306,
       username: 'root',
       password: '',
-      database: 'test2',
-      entities: [User, Viewer, Streamer, Social, Canale],
+      database: 'test',
+      entities: [User, Viewer, Streamer, Social, Canale,Portafoglio],
       synchronize: false,
       migrations: ['src/migrations/**/*.ts'],
       subscribers: [],

@@ -1,6 +1,7 @@
 import { PrimaryGeneratedColumn, Column, Entity, Timestamp, JoinColumn, OneToOne } from "typeorm";
 import { Streamer } from "../../streamer/entities/streamer.entity";
 import { Viewer } from "../../viewer/entities/viewer.entity";
+import { Portafoglio } from "../../portafoglio/entities/portafoglio.entity";
 
 //import { Portafoglio } from "../portafoglio/entities/portafoglio.entity";
 
@@ -20,7 +21,7 @@ export class User {
 	password: string
 
 	@Column()
-	dataNascita: string
+	dataNascita: Date
 
 	@Column()
 	numeroTelefono: string
@@ -28,14 +29,13 @@ export class User {
 	@Column({ type: 'timestamp', nullable: true })
 	deleteAt: Date;
 
-
 	@OneToOne(() => Viewer, viewer => viewer.user)
-	viewer: Viewer;
+	viewer: Viewer[];
 
 	@OneToOne(() => Streamer, streamer => streamer.user)
-	streamer: Streamer;
+	streamer: Streamer[];
 
-	/*@OneToOne(() => Portafoglio, portafoglio => portafoglio.user)
-	portafoglio: Portafoglio;*/
+	@OneToOne(() => Portafoglio, portafoglio => portafoglio.user)
+	portafoglio: Portafoglio[];
 
 }

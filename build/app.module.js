@@ -22,6 +22,7 @@ var social_module_1 = require("./social/social.module");
 var social_entity_1 = require("./social/entities/social.entity");
 var canale_entity_1 = require("./canale/entities/canale.entity");
 var portafoglio_module_1 = require("./portafoglio/portafoglio.module");
+var portafoglio_entity_1 = require("./portafoglio/entities/portafoglio.entity");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -34,8 +35,8 @@ var AppModule = /** @class */ (function () {
                     port: 3306,
                     username: 'root',
                     password: '',
-                    database: 'test2',
-                    entities: [user_entity_1.User, viewer_entity_1.Viewer, streamer_entity_1.Streamer, social_entity_1.Social, canale_entity_1.Canale],
+                    database: 'test',
+                    entities: [user_entity_1.User, viewer_entity_1.Viewer, streamer_entity_1.Streamer, social_entity_1.Social, canale_entity_1.Canale, portafoglio_entity_1.Portafoglio],
                     synchronize: false,
                     migrations: ['src/migrations/**/*.ts'],
                     subscribers: [],

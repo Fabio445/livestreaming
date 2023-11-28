@@ -5,16 +5,17 @@ import { Viewer } from "./viewer/entities/viewer.entity"
 import { Streamer } from "./streamer/entities/streamer.entity"
 import { Social } from "./social/entities/social.entity"
 import { Canale } from "./canale/entities/canale.entity"
+import { Portafoglio } from "./portafoglio/entities/portafoglio.entity"
  
 export const AppDataSource = new DataSource({
     type: "mysql",
     host: "localhost",
     username: "root",
     password: "",
-    database: "test2",
+    database: "test",
     synchronize: false,
     logging: false,
-    entities: [User, Viewer, Streamer, Social, Canale],
+    entities: [User, Viewer, Streamer, Social, Canale,Portafoglio],
     migrations: ['src/migrations/**/*.ts'],
     subscribers: [],
 })

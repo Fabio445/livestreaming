@@ -29,7 +29,7 @@ var Social = /** @class */ (function () {
     ], Social.prototype, "url", void 0);
     __decorate([
         (0, typeorm_1.OneToMany)(function () { return canale_entity_1.Canale; }, function (canale) { return canale.socials; }),
-        __metadata("design:type", canale_entity_1.Canale)
+        __metadata("design:type", Array)
     ], Social.prototype, "canale", void 0);
     Social = __decorate([
         (0, typeorm_1.Entity)()

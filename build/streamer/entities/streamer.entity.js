@@ -22,12 +22,11 @@ var Streamer = /** @class */ (function () {
     ], Streamer.prototype, "idStreamer", void 0);
     __decorate([
         (0, typeorm_1.OneToOne)(function () { return user_entity_1.User; }, function (user) { return user.streamer; }),
-        (0, typeorm_1.JoinColumn)(),
-        __metadata("design:type", user_entity_1.User)
+        (0, typeorm_1.JoinColumn)({ name: 'idUser' }),
+        __metadata("design:type", Array)
     ], Streamer.prototype, "user", void 0);
     __decorate([
-        (0, typeorm_1.ManyToOne)(function () { return canale_entity_1.Canale; }, function (canale) { return canale.streamer; }),
-        (0, typeorm_1.JoinColumn)({ name: 'idStreamer' }),
+        (0, typeorm_1.OneToOne)(function () { return canale_entity_1.Canale; }, function (canale) { return canale.streamer; }),
         __metadata("design:type", Array)
     ], Streamer.prototype, "canale", void 0);
     Streamer = __decorate([
