@@ -7,7 +7,9 @@ const AppDataSource = new DataSource({
     port: 3306,
     username: "root",
     password: "",
-    name: "livestreaming",
+    name: "test",
+    synchronize: false,
+    migrations: ['src/migrations/*{.ts,.js}'],
 })
 
 AppDataSource.initialize()
