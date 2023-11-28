@@ -9,6 +9,12 @@ var streamer_entity_1 = require("./streamer/entities/streamer.entity");
 var social_entity_1 = require("./social/entities/social.entity");
 var canale_entity_1 = require("./canale/entities/canale.entity");
 var portafoglio_entity_1 = require("./portafoglio/entities/portafoglio.entity");
+<<<<<<< HEAD
+=======
+var guest_entity_1 = require("./guest/entities/guest.entity");
+var tag_entity_1 = require("./tag/entities/tag.entity");
+var categoria_entity_1 = require("./categoria/entities/categoria.entity");
+>>>>>>> 963dea0cae55a473beb18314cbb67b229356689b
 exports.AppDataSource = new typeorm_1.DataSource({
     type: 'mysql',
     host: 'localhost',
@@ -17,7 +23,11 @@ exports.AppDataSource = new typeorm_1.DataSource({
     database: 'test',
     synchronize: false,
     logging: false,
+<<<<<<< HEAD
     entities: [user_entity_1.User, viewer_entity_1.Viewer, streamer_entity_1.Streamer, social_entity_1.Social, canale_entity_1.Canale, portafoglio_entity_1.Portafoglio],
+=======
+    entities: [user_entity_1.User, viewer_entity_1.Viewer, streamer_entity_1.Streamer, social_entity_1.Social, canale_entity_1.Canale, portafoglio_entity_1.Portafoglio, guest_entity_1.Guest, tag_entity_1.Tag, categoria_entity_1.Categoria],
+>>>>>>> 963dea0cae55a473beb18314cbb67b229356689b
     migrations: ['src/migrations/**/*.ts'],
     subscribers: [],
 });

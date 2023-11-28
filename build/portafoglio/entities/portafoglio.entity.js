@@ -25,7 +25,11 @@ var Portafoglio = /** @class */ (function () {
     ], Portafoglio.prototype, "bit", void 0);
     __decorate([
         (0, typeorm_1.OneToOne)(function () { return user_entity_1.User; }, function (user) { return user.portafoglio; }),
+<<<<<<< HEAD
         (0, typeorm_1.JoinColumn)({ name: 'IdUser' }),
+=======
+        (0, typeorm_1.JoinColumn)({ name: 'idUser' }),
+>>>>>>> 963dea0cae55a473beb18314cbb67b229356689b
         __metadata("design:type", user_entity_1.User)
     ], Portafoglio.prototype, "user", void 0);
     Portafoglio = __decorate([

@@ -14,7 +14,10 @@ var typeorm_1 = require("typeorm");
 var streamer_entity_1 = require("../../streamer/entities/streamer.entity");
 var viewer_entity_1 = require("../../viewer/entities/viewer.entity");
 var portafoglio_entity_1 = require("../../portafoglio/entities/portafoglio.entity");
+<<<<<<< HEAD
 //import { Portafoglio } from "../portafoglio/entities/portafoglio.entity";
+=======
+>>>>>>> 963dea0cae55a473beb18314cbb67b229356689b
 var User = /** @class */ (function () {
     function User() {
     }
@@ -56,7 +59,11 @@ var User = /** @class */ (function () {
     ], User.prototype, "streamer", void 0);
     __decorate([
         (0, typeorm_1.OneToOne)(function () { return portafoglio_entity_1.Portafoglio; }, function (portafoglio) { return portafoglio.user; }),
+<<<<<<< HEAD
         __metadata("design:type", Array)
+=======
+        __metadata("design:type", portafoglio_entity_1.Portafoglio)
+>>>>>>> 963dea0cae55a473beb18314cbb67b229356689b
     ], User.prototype, "portafoglio", void 0);
     User = __decorate([
         (0, typeorm_1.Entity)()
