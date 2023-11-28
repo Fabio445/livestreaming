@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { CanaleService } from './canale.service';
 import { CreateCanaleDto } from './dto/create-canale.dto';
 import { UpdateCanaleDto } from './dto/update-canale.dto';

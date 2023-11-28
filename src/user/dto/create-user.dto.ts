@@ -1,14 +1,13 @@
 export class CreateUserDto {
-	idUser: number
+  idUser: number;
 
-	username: string
+  username: string;
 
-	email: string
+  email: string;
 
-	password: string
+  password: string;
 
-	dataNascita: string
+  dataNascita: string;
 
-	numeroTelefono: string
-
+  numeroTelefono: string;
 }

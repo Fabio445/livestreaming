@@ -15,7 +15,6 @@ import { Canale } from './canale/entities/canale.entity';
 import { PortafoglioModule } from './portafoglio/portafoglio.module';
 import { Portafoglio } from './portafoglio/entities/portafoglio.entity';
 
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -25,21 +24,19 @@ import { Portafoglio } from './portafoglio/entities/portafoglio.entity';
       username: 'root',
       password: '',
       database: 'test',
-      entities: [User, Viewer, Streamer, Social, Canale,Portafoglio],
+      entities: [User, Viewer, Streamer, Social, Canale, Portafoglio],
       synchronize: false,
       migrations: ['src/migrations/**/*.ts'],
       subscribers: [],
     }),
-	UserModule,
-	CanaleModule,
-	ViewerModule,
-	StreamerModule,
-	SocialModule,
-	PortafoglioModule
+    UserModule,
+    CanaleModule,
+    ViewerModule,
+    StreamerModule,
+    SocialModule,
+    PortafoglioModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-
-export class AppModule { }
-
+export class AppModule {}

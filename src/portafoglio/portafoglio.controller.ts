@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { PortafoglioService } from './portafoglio.service';
 import { CreatePortafoglioDto } from './dto/create-portafoglio.dto';
 import { UpdatePortafoglioDto } from './dto/update-portafoglio.dto';
@@ -23,7 +31,10 @@ export class PortafoglioController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePortafoglioDto: UpdatePortafoglioDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updatePortafoglioDto: UpdatePortafoglioDto,
+  ) {
     return this.portafoglioService.update(+id, updatePortafoglioDto);
   }
 

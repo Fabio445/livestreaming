@@ -1,20 +1,26 @@
-import { PrimaryGeneratedColumn, Column, Entity, Timestamp, JoinColumn, OneToOne, OneToMany, ManyToOne } from "typeorm";
-import { Canale } from "../../canale/entities/canale.entity";
+import {
+  PrimaryGeneratedColumn,
+  Column,
+  Entity,
+  Timestamp,
+  JoinColumn,
+  OneToOne,
+  OneToMany,
+  ManyToOne,
+} from 'typeorm';
+import { Canale } from '../../canale/entities/canale.entity';
 
 @Entity()
 export class Social {
+  @PrimaryGeneratedColumn()
+  idSocial: number;
 
-	@PrimaryGeneratedColumn()
-	idSocial: number
+  @Column()
+  nome: string;
 
-	@Column()
-	nome: string
+  @Column()
+  url: string;
 
-	@Column()
-	url: string
-
-    @OneToMany(() => Canale, canale => canale.socials)
-    canale: Canale[];
-	
-	
+  @OneToMany(() => Canale, (canale) => canale.socials)
+  canale: Canale[];
 }
