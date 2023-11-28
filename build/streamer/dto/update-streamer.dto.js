@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,16 +13,14 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateStreamerDto = void 0;
-var mapped_types_1 = require("@nestjs/mapped-types");
-var create_streamer_dto_1 = require("./create-streamer.dto");
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateStreamerDto } from './create-streamer.dto';
 var UpdateStreamerDto = /** @class */ (function (_super) {
     __extends(UpdateStreamerDto, _super);
     function UpdateStreamerDto() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return UpdateStreamerDto;
-}((0, mapped_types_1.PartialType)(create_streamer_dto_1.CreateStreamerDto)));
-exports.UpdateStreamerDto = UpdateStreamerDto;
+}(PartialType(CreateStreamerDto)));
+export { UpdateStreamerDto };
 //# sourceMappingURL=update-streamer.dto.js.map

@@ -1,25 +1,22 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.PortafoglioModule = void 0;
-var common_1 = require("@nestjs/common");
-var portafoglio_service_1 = require("./portafoglio.service");
-var portafoglio_controller_1 = require("./portafoglio.controller");
+import { Module } from '@nestjs/common';
+import { PortafoglioService } from './portafoglio.service';
+import { PortafoglioController } from './portafoglio.controller';
 var PortafoglioModule = /** @class */ (function () {
     function PortafoglioModule() {
     }
     PortafoglioModule = __decorate([
-        (0, common_1.Module)({
-            controllers: [portafoglio_controller_1.PortafoglioController],
-            providers: [portafoglio_service_1.PortafoglioService],
+        Module({
+            controllers: [PortafoglioController],
+            providers: [PortafoglioService],
         })
     ], PortafoglioModule);
     return PortafoglioModule;
 }());
-exports.PortafoglioModule = PortafoglioModule;
+export { PortafoglioModule };
 //# sourceMappingURL=portafoglio.module.js.map

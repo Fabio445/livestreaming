@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,16 +13,14 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateUserDto = void 0;
-var mapped_types_1 = require("@nestjs/mapped-types");
-var create_user_dto_1 = require("./create-user.dto");
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateUserDto } from './create-user.dto';
 var UpdateUserDto = /** @class */ (function (_super) {
     __extends(UpdateUserDto, _super);
     function UpdateUserDto() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return UpdateUserDto;
-}((0, mapped_types_1.PartialType)(create_user_dto_1.CreateUserDto)));
-exports.UpdateUserDto = UpdateUserDto;
+}(PartialType(CreateUserDto)));
+export { UpdateUserDto };
 //# sourceMappingURL=update-user.dto.js.map

@@ -1,58 +1,55 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
-var common_1 = require("@nestjs/common");
-var app_controller_1 = require("./app.controller");
-var app_service_1 = require("./app.service");
-var typeorm_1 = require("@nestjs/typeorm");
-var user_entity_1 = require("./user/entities/user.entity");
-var viewer_entity_1 = require("./viewer/entities/viewer.entity");
-var user_module_1 = require("./user/user.module");
-var canale_module_1 = require("./canale/canale.module");
-var viewer_module_1 = require("./viewer/viewer.module");
-var streamer_module_1 = require("./streamer/streamer.module");
-var streamer_entity_1 = require("./streamer/entities/streamer.entity");
-var social_module_1 = require("./social/social.module");
-var social_entity_1 = require("./social/entities/social.entity");
-var canale_entity_1 = require("./canale/entities/canale.entity");
-var portafoglio_module_1 = require("./portafoglio/portafoglio.module");
-var portafoglio_entity_1 = require("./portafoglio/entities/portafoglio.entity");
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './user/entities/user.entity';
+import { Viewer } from './viewer/entities/viewer.entity';
+import { UserModule } from './user/user.module';
+import { CanaleModule } from './canale/canale.module';
+import { ViewerModule } from './viewer/viewer.module';
+import { StreamerModule } from './streamer/streamer.module';
+import { Streamer } from './streamer/entities/streamer.entity';
+import { SocialModule } from './social/social.module';
+import { Social } from './social/entities/social.entity';
+import { Canale } from './canale/entities/canale.entity';
+import { PortafoglioModule } from './portafoglio/portafoglio.module';
+import { Portafoglio } from './portafoglio/entities/portafoglio.entity';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        (0, common_1.Module)({
+        Module({
             imports: [
-                typeorm_1.TypeOrmModule.forRoot({
+                TypeOrmModule.forRoot({
                     type: 'mysql',
                     host: 'localhost',
                     port: 3306,
                     username: 'root',
                     password: '',
                     database: 'test',
-                    entities: [user_entity_1.User, viewer_entity_1.Viewer, streamer_entity_1.Streamer, social_entity_1.Social, canale_entity_1.Canale, portafoglio_entity_1.Portafoglio],
+                    entities: [User, Viewer, Streamer, Social, Canale, Portafoglio],
                     synchronize: false,
                     migrations: ['src/migrations/**/*.ts'],
                     subscribers: [],
                 }),
-                user_module_1.UserModule,
-                canale_module_1.CanaleModule,
-                viewer_module_1.ViewerModule,
-                streamer_module_1.StreamerModule,
-                social_module_1.SocialModule,
-                portafoglio_module_1.PortafoglioModule
+                UserModule,
+                CanaleModule,
+                ViewerModule,
+                StreamerModule,
+                SocialModule,
+                PortafoglioModule
             ],
-            controllers: [app_controller_1.AppController],
-            providers: [app_service_1.AppService],
+            controllers: [AppController],
+            providers: [AppService],
         })
     ], AppModule);
     return AppModule;
 }());
-exports.AppModule = AppModule;
+export { AppModule };
 //# sourceMappingURL=app.module.js.map
