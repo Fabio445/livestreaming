@@ -1,3 +1,28 @@
+import "reflect-metadata"
+import { DataSource } from "typeorm"
+import { User } from "./user/entities/user.entity"
+import { Viewer } from "./viewer/entities/viewer.entity"
+import { Streamer } from "./streamer/entities/streamer.entity"
+import { Social } from "./social/entities/social.entity"
+import { Canale } from "./canale/entities/canale.entity"
+ 
+export const AppDataSource = new DataSource({
+    type: "mysql",
+    host: "localhost",
+    username: "root",
+    password: "",
+    database: "test2",
+    synchronize: false,
+    logging: false,
+    entities: [User, Viewer, Streamer, Social, Canale],
+    migrations: ['src/migrations/**/*.ts'],
+    subscribers: [],
+})
+ 
+
+
+
+
 /*import { DataSource } from "typeorm"
 import "reflect-metadata"
 import { User } from "./user/user.entity"
@@ -21,22 +46,3 @@ export const AppDataSource = new DataSource({
     .catch((err) => {
         console.error("Error during Data Source initialization", err)
     })*/
-
-
-import "reflect-metadata"
-import { DataSource } from "typeorm"
-import { User } from "./user/user.entity"
- 
-export const AppDataSource = new DataSource({
-    type: "mysql",
-    host: "localhost",
-    username: "root",
-    password: "",
-    database: "test",
-    synchronize: false,
-    logging: false,
-    entities: [User],
-    migrations: ['src/migrations/**/*.ts'],
-    subscribers: [],
-})
- 
