@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,31 +8,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { PrimaryGeneratedColumn, Column, Entity, OneToMany } from "typeorm";
-import { Canale } from "../../canale/entities/canale.entity";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Social = void 0;
+var typeorm_1 = require("typeorm");
+var canale_entity_1 = require("../../canale/entities/canale.entity");
 var Social = /** @class */ (function () {
     function Social() {
     }
     __decorate([
-        PrimaryGeneratedColumn(),
+        (0, typeorm_1.PrimaryGeneratedColumn)(),
         __metadata("design:type", Number)
     ], Social.prototype, "idSocial", void 0);
     __decorate([
-        Column(),
+        (0, typeorm_1.Column)(),
         __metadata("design:type", String)
     ], Social.prototype, "nome", void 0);
     __decorate([
-        Column(),
+        (0, typeorm_1.Column)(),
         __metadata("design:type", String)
     ], Social.prototype, "url", void 0);
     __decorate([
-        OneToMany(function () { return Canale; }, function (canale) { return canale.socials; }),
+        (0, typeorm_1.OneToMany)(function () { return canale_entity_1.Canale; }, function (canale) { return canale.socials; }),
         __metadata("design:type", Array)
     ], Social.prototype, "canale", void 0);
     Social = __decorate([
-        Entity()
+        (0, typeorm_1.Entity)()
     ], Social);
     return Social;
 }());
-export { Social };
+exports.Social = Social;
 //# sourceMappingURL=social.entity.js.map

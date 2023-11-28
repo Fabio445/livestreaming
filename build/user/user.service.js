@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Injectable } from '@nestjs/common';
-import { Repository } from 'typeorm';
-import { InjectRepository } from '@nestjs/typeorm';
-import { User } from './entities/user.entity';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserService = void 0;
+var common_1 = require("@nestjs/common");
+var typeorm_1 = require("typeorm");
+var typeorm_2 = require("@nestjs/typeorm");
+var user_entity_1 = require("./entities/user.entity");
 var UserService = /** @class */ (function () {
     function UserService(repo) {
         this.repo = repo;
@@ -34,11 +37,11 @@ var UserService = /** @class */ (function () {
         return "This action removes a #".concat(id, " user");
     };
     UserService = __decorate([
-        Injectable(),
-        __param(0, InjectRepository(User)),
-        __metadata("design:paramtypes", [Repository])
+        (0, common_1.Injectable)(),
+        __param(0, (0, typeorm_2.InjectRepository)(user_entity_1.User)),
+        __metadata("design:paramtypes", [typeorm_1.Repository])
     ], UserService);
     return UserService;
 }());
-export { UserService };
+exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

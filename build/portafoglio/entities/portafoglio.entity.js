@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,28 +8,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { PrimaryGeneratedColumn, Column, Entity, JoinColumn, OneToOne } from "typeorm";
-import { User } from "../../user/entities/user.entity";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Portafoglio = void 0;
+var typeorm_1 = require("typeorm");
+var user_entity_1 = require("../../user/entities/user.entity");
 var Portafoglio = /** @class */ (function () {
     function Portafoglio() {
     }
     __decorate([
-        PrimaryGeneratedColumn(),
+        (0, typeorm_1.PrimaryGeneratedColumn)(),
         __metadata("design:type", Number)
     ], Portafoglio.prototype, "idPortafoglio", void 0);
     __decorate([
-        Column(),
+        (0, typeorm_1.Column)(),
         __metadata("design:type", Number)
     ], Portafoglio.prototype, "bit", void 0);
     __decorate([
-        OneToOne(function () { return User; }, function (user) { return user.portafoglio; }),
-        JoinColumn({ name: 'IdUser' }),
-        __metadata("design:type", User)
+        (0, typeorm_1.OneToOne)(function () { return user_entity_1.User; }, function (user) { return user.portafoglio; }),
+        (0, typeorm_1.JoinColumn)({ name: 'IdUser' }),
+        __metadata("design:type", user_entity_1.User)
     ], Portafoglio.prototype, "user", void 0);
     Portafoglio = __decorate([
-        Entity()
+        (0, typeorm_1.Entity)()
     ], Portafoglio);
     return Portafoglio;
 }());
-export { Portafoglio };
+exports.Portafoglio = Portafoglio;
 //# sourceMappingURL=portafoglio.entity.js.map

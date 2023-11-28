@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,8 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AppController = void 0;
+var common_1 = require("@nestjs/common");
+var app_service_1 = require("./app.service");
 var AppController = /** @class */ (function () {
     function AppController(appService) {
         this.appService = appService;
@@ -17,16 +20,16 @@ var AppController = /** @class */ (function () {
         return this.appService.getHello();
     };
     __decorate([
-        Get(),
+        (0, common_1.Get)(),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", String)
     ], AppController.prototype, "getHello", null);
     AppController = __decorate([
-        Controller(),
-        __metadata("design:paramtypes", [AppService])
+        (0, common_1.Controller)(),
+        __metadata("design:paramtypes", [app_service_1.AppService])
     ], AppController);
     return AppController;
 }());
-export { AppController };
+exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map

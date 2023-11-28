@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,14 +14,16 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { PartialType } from '@nestjs/mapped-types';
-import { CreatePortafoglioDto } from './create-portafoglio.dto';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UpdatePortafoglioDto = void 0;
+var mapped_types_1 = require("@nestjs/mapped-types");
+var create_portafoglio_dto_1 = require("./create-portafoglio.dto");
 var UpdatePortafoglioDto = /** @class */ (function (_super) {
     __extends(UpdatePortafoglioDto, _super);
     function UpdatePortafoglioDto() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return UpdatePortafoglioDto;
-}(PartialType(CreatePortafoglioDto)));
-export { UpdatePortafoglioDto };
+}((0, mapped_types_1.PartialType)(create_portafoglio_dto_1.CreatePortafoglioDto)));
+exports.UpdatePortafoglioDto = UpdatePortafoglioDto;
 //# sourceMappingURL=update-portafoglio.dto.js.map

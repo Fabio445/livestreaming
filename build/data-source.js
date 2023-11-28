@@ -1,20 +1,23 @@
-import "reflect-metadata";
-import { DataSource } from "typeorm";
-import { User } from "./user/entities/user.entity";
-import { Viewer } from "./viewer/entities/viewer.entity";
-import { Streamer } from "./streamer/entities/streamer.entity";
-import { Social } from "./social/entities/social.entity";
-import { Canale } from "./canale/entities/canale.entity";
-import { Portafoglio } from "./portafoglio/entities/portafoglio.entity";
-export var AppDataSource = new DataSource({
-    type: "mysql",
-    host: "localhost",
-    username: "root",
-    password: "",
-    database: "test",
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AppDataSource = void 0;
+require("reflect-metadata");
+var typeorm_1 = require("typeorm");
+var user_entity_1 = require("./user/entities/user.entity");
+var viewer_entity_1 = require("./viewer/entities/viewer.entity");
+var streamer_entity_1 = require("./streamer/entities/streamer.entity");
+var social_entity_1 = require("./social/entities/social.entity");
+var canale_entity_1 = require("./canale/entities/canale.entity");
+var portafoglio_entity_1 = require("./portafoglio/entities/portafoglio.entity");
+exports.AppDataSource = new typeorm_1.DataSource({
+    type: 'mysql',
+    host: 'localhost',
+    username: 'root',
+    password: '',
+    database: 'test',
     synchronize: false,
     logging: false,
-    entities: [User, Viewer, Streamer, Social, Canale, Portafoglio],
+    entities: [user_entity_1.User, viewer_entity_1.Viewer, streamer_entity_1.Streamer, social_entity_1.Social, canale_entity_1.Canale, portafoglio_entity_1.Portafoglio],
     migrations: ['src/migrations/**/*.ts'],
     subscribers: [],
 });
@@ -40,5 +43,5 @@ export const AppDataSource = new DataSource({
     })
     .catch((err) => {
         console.error("Error during Data Source initialization", err)
-    })*/ 
+    })*/
 //# sourceMappingURL=data-source.js.map

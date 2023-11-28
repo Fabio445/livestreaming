@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { PortafoglioService } from './portafoglio.service';
-import { CreatePortafoglioDto } from './dto/create-portafoglio.dto';
-import { UpdatePortafoglioDto } from './dto/update-portafoglio.dto';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PortafoglioController = void 0;
+var common_1 = require("@nestjs/common");
+var portafoglio_service_1 = require("./portafoglio.service");
+var create_portafoglio_dto_1 = require("./dto/create-portafoglio.dto");
+var update_portafoglio_dto_1 = require("./dto/update-portafoglio.dto");
 var PortafoglioController = /** @class */ (function () {
     function PortafoglioController(portafoglioService) {
         this.portafoglioService = portafoglioService;
@@ -34,45 +37,45 @@ var PortafoglioController = /** @class */ (function () {
         return this.portafoglioService.remove(+id);
     };
     __decorate([
-        Post(),
-        __param(0, Body()),
+        (0, common_1.Post)(),
+        __param(0, (0, common_1.Body)()),
         __metadata("design:type", Function),
-        __metadata("design:paramtypes", [CreatePortafoglioDto]),
+        __metadata("design:paramtypes", [create_portafoglio_dto_1.CreatePortafoglioDto]),
         __metadata("design:returntype", void 0)
     ], PortafoglioController.prototype, "create", null);
     __decorate([
-        Get(),
+        (0, common_1.Get)(),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], PortafoglioController.prototype, "findAll", null);
     __decorate([
-        Get(':id'),
-        __param(0, Param('id')),
+        (0, common_1.Get)(':id'),
+        __param(0, (0, common_1.Param)('id')),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [String]),
         __metadata("design:returntype", void 0)
     ], PortafoglioController.prototype, "findOne", null);
     __decorate([
-        Patch(':id'),
-        __param(0, Param('id')),
-        __param(1, Body()),
+        (0, common_1.Patch)(':id'),
+        __param(0, (0, common_1.Param)('id')),
+        __param(1, (0, common_1.Body)()),
         __metadata("design:type", Function),
-        __metadata("design:paramtypes", [String, UpdatePortafoglioDto]),
+        __metadata("design:paramtypes", [String, update_portafoglio_dto_1.UpdatePortafoglioDto]),
         __metadata("design:returntype", void 0)
     ], PortafoglioController.prototype, "update", null);
     __decorate([
-        Delete(':id'),
-        __param(0, Param('id')),
+        (0, common_1.Delete)(':id'),
+        __param(0, (0, common_1.Param)('id')),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [String]),
         __metadata("design:returntype", void 0)
     ], PortafoglioController.prototype, "remove", null);
     PortafoglioController = __decorate([
-        Controller('portafoglio'),
-        __metadata("design:paramtypes", [PortafoglioService])
+        (0, common_1.Controller)('portafoglio'),
+        __metadata("design:paramtypes", [portafoglio_service_1.PortafoglioService])
     ], PortafoglioController);
     return PortafoglioController;
 }());
-export { PortafoglioController };
+exports.PortafoglioController = PortafoglioController;
 //# sourceMappingURL=portafoglio.controller.js.map

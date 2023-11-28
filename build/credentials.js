@@ -1,6 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // credential.ts
-import * as dotenv from 'dotenv';
-import * as path from 'path';
+var dotenv = require("dotenv");
+var path = require("path");
 // Load environment variables from the .env file
 dotenv.config({
     path: path.resolve(__dirname, '../database.env'),

@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,14 +14,16 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateCanaleDto } from './create-canale.dto';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UpdateCanaleDto = void 0;
+var mapped_types_1 = require("@nestjs/mapped-types");
+var create_canale_dto_1 = require("./create-canale.dto");
 var UpdateCanaleDto = /** @class */ (function (_super) {
     __extends(UpdateCanaleDto, _super);
     function UpdateCanaleDto() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return UpdateCanaleDto;
-}(PartialType(CreateCanaleDto)));
-export { UpdateCanaleDto };
+}((0, mapped_types_1.PartialType)(create_canale_dto_1.CreateCanaleDto)));
+exports.UpdateCanaleDto = UpdateCanaleDto;
 //# sourceMappingURL=update-canale.dto.js.map

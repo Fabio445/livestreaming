@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { StreamerService } from './streamer.service';
-import { CreateStreamerDto } from './dto/create-streamer.dto';
-import { UpdateStreamerDto } from './dto/update-streamer.dto';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StreamerController = void 0;
+var common_1 = require("@nestjs/common");
+var streamer_service_1 = require("./streamer.service");
+var create_streamer_dto_1 = require("./dto/create-streamer.dto");
+var update_streamer_dto_1 = require("./dto/update-streamer.dto");
 var StreamerController = /** @class */ (function () {
     function StreamerController(streamerService) {
         this.streamerService = streamerService;
@@ -34,45 +37,45 @@ var StreamerController = /** @class */ (function () {
         return this.streamerService.remove(+id);
     };
     __decorate([
-        Post(),
-        __param(0, Body()),
+        (0, common_1.Post)(),
+        __param(0, (0, common_1.Body)()),
         __metadata("design:type", Function),
-        __metadata("design:paramtypes", [CreateStreamerDto]),
+        __metadata("design:paramtypes", [create_streamer_dto_1.CreateStreamerDto]),
         __metadata("design:returntype", void 0)
     ], StreamerController.prototype, "create", null);
     __decorate([
-        Get(),
+        (0, common_1.Get)(),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], StreamerController.prototype, "findAll", null);
     __decorate([
-        Get(':id'),
-        __param(0, Param('id')),
+        (0, common_1.Get)(':id'),
+        __param(0, (0, common_1.Param)('id')),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [String]),
         __metadata("design:returntype", void 0)
     ], StreamerController.prototype, "findOne", null);
     __decorate([
-        Patch(':id'),
-        __param(0, Param('id')),
-        __param(1, Body()),
+        (0, common_1.Patch)(':id'),
+        __param(0, (0, common_1.Param)('id')),
+        __param(1, (0, common_1.Body)()),
         __metadata("design:type", Function),
-        __metadata("design:paramtypes", [String, UpdateStreamerDto]),
+        __metadata("design:paramtypes", [String, update_streamer_dto_1.UpdateStreamerDto]),
         __metadata("design:returntype", void 0)
     ], StreamerController.prototype, "update", null);
     __decorate([
-        Delete(':id'),
-        __param(0, Param('id')),
+        (0, common_1.Delete)(':id'),
+        __param(0, (0, common_1.Param)('id')),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [String]),
         __metadata("design:returntype", void 0)
     ], StreamerController.prototype, "remove", null);
     StreamerController = __decorate([
-        Controller('streamer'),
-        __metadata("design:paramtypes", [StreamerService])
+        (0, common_1.Controller)('streamer'),
+        __metadata("design:paramtypes", [streamer_service_1.StreamerService])
     ], StreamerController);
     return StreamerController;
 }());
-export { StreamerController };
+exports.StreamerController = StreamerController;
 //# sourceMappingURL=streamer.controller.js.map

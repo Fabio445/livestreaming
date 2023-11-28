@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,29 +8,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { PrimaryGeneratedColumn, Entity, OneToOne, JoinColumn } from "typeorm";
-import { User } from "../../user/entities/user.entity";
-import { Canale } from "../../canale/entities/canale.entity";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Streamer = void 0;
+var typeorm_1 = require("typeorm");
+var user_entity_1 = require("../../user/entities/user.entity");
+var canale_entity_1 = require("../../canale/entities/canale.entity");
 var Streamer = /** @class */ (function () {
     function Streamer() {
     }
     __decorate([
-        PrimaryGeneratedColumn(),
+        (0, typeorm_1.PrimaryGeneratedColumn)(),
         __metadata("design:type", Number)
     ], Streamer.prototype, "idStreamer", void 0);
     __decorate([
-        OneToOne(function () { return User; }, function (user) { return user.streamer; }),
-        JoinColumn({ name: 'idUser' }),
+        (0, typeorm_1.OneToOne)(function () { return user_entity_1.User; }, function (user) { return user.streamer; }),
+        (0, typeorm_1.JoinColumn)({ name: 'idUser' }),
         __metadata("design:type", Array)
     ], Streamer.prototype, "user", void 0);
     __decorate([
-        OneToOne(function () { return Canale; }, function (canale) { return canale.streamer; }),
+        (0, typeorm_1.OneToOne)(function () { return canale_entity_1.Canale; }, function (canale) { return canale.streamer; }),
         __metadata("design:type", Array)
     ], Streamer.prototype, "canale", void 0);
     Streamer = __decorate([
-        Entity()
+        (0, typeorm_1.Entity)()
     ], Streamer);
     return Streamer;
 }());
-export { Streamer };
+exports.Streamer = Streamer;
 //# sourceMappingURL=streamer.entity.js.map
