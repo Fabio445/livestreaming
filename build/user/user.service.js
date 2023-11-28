@@ -22,7 +22,8 @@ var UserService = /** @class */ (function () {
         this.repo = repo;
     }
     UserService.prototype.create = function (createUserDto) {
-        return this.repo.find();
+        var newUser = this.repo.create(createUserDto);
+        return this.repo.save(newUser);
     };
     UserService.prototype.findAll = function () {
         return this.repo.find();

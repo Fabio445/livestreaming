@@ -22,6 +22,14 @@ var social_module_1 = require("./social/social.module");
 var social_entity_1 = require("./social/entities/social.entity");
 var canale_entity_1 = require("./canale/entities/canale.entity");
 var portafoglio_module_1 = require("./portafoglio/portafoglio.module");
+var portafoglio_entity_1 = require("./portafoglio/entities/portafoglio.entity");
+var guest_module_1 = require("./guest/guest.module");
+var guest_entity_1 = require("./guest/entities/guest.entity");
+var tag_module_1 = require("./tag/tag.module");
+var tag_entity_1 = require("./tag/entities/tag.entity");
+var categoria_module_1 = require("./categoria/categoria.module");
+var categoria_entity_1 = require("./categoria/entities/categoria.entity");
+var live_module_1 = require("./live/live.module");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -35,7 +43,7 @@ var AppModule = /** @class */ (function () {
                     username: 'root',
                     password: '',
                     database: 'test2',
-                    entities: [user_entity_1.User, viewer_entity_1.Viewer, streamer_entity_1.Streamer, social_entity_1.Social, canale_entity_1.Canale],
+                    entities: [user_entity_1.User, viewer_entity_1.Viewer, streamer_entity_1.Streamer, social_entity_1.Social, canale_entity_1.Canale, portafoglio_entity_1.Portafoglio, guest_entity_1.Guest, tag_entity_1.Tag, categoria_entity_1.Categoria],
                     synchronize: false,
                     migrations: ['src/migrations/**/*.ts'],
                     subscribers: [],
@@ -45,7 +53,11 @@ var AppModule = /** @class */ (function () {
                 viewer_module_1.ViewerModule,
                 streamer_module_1.StreamerModule,
                 social_module_1.SocialModule,
-                portafoglio_module_1.PortafoglioModule
+                portafoglio_module_1.PortafoglioModule,
+                guest_module_1.GuestModule,
+                tag_module_1.TagModule,
+                categoria_module_1.CategoriaModule,
+                live_module_1.LiveModule
             ],
             controllers: [app_controller_1.AppController],
             providers: [app_service_1.AppService],

@@ -11,7 +11,8 @@ export class UserService {
 
   constructor(@InjectRepository(User) private repo: Repository<User>) { }
   create(createUserDto: CreateUserDto) {
-    return this.repo.find();
+    const newUser = this.repo.create(createUserDto);
+    return this.repo.save(newUser);
   }
 
 	findAll(): Promise<User[]> {

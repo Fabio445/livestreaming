@@ -18,9 +18,10 @@ export class Canale {
 
 	@ManyToOne(() => Social, social => social.canale)
 	@JoinColumn({ name: 'idSocial' })
-	socials: Social[];  //entità che dà la fk
+	socials: Social[];  //entità che prende la fk
 
-	@OneToMany(() => Streamer, streamer => streamer.canale)
-    streamer: Streamer; 
+	@OneToOne(() => Streamer, streamer => streamer.canale)
+	@JoinColumn({ name: 'idStreamer' })
+    streamer: Streamer;  
 
 }

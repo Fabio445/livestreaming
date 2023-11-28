@@ -11,10 +11,9 @@ export class Streamer {
 
 	
     @OneToOne(() => User, user => user.streamer)
-    @JoinColumn()
+    @JoinColumn({name: "idUser"})
     user: User;
 
-    @ManyToOne(() => Canale, canale => canale.streamer)
-	@JoinColumn({ name: 'idStreamer' })
+    @OneToOne(() => Canale, canale => canale.streamer)
 	canale: Canale[]; 
   }

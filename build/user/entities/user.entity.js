@@ -13,7 +13,7 @@ exports.User = void 0;
 var typeorm_1 = require("typeorm");
 var streamer_entity_1 = require("../../streamer/entities/streamer.entity");
 var viewer_entity_1 = require("../../viewer/entities/viewer.entity");
-//import { Portafoglio } from "../portafoglio/entities/portafoglio.entity";
+var portafoglio_entity_1 = require("../../portafoglio/entities/portafoglio.entity");
 var User = /** @class */ (function () {
     function User() {
     }
@@ -34,8 +34,8 @@ var User = /** @class */ (function () {
         __metadata("design:type", String)
     ], User.prototype, "password", void 0);
     __decorate([
-        (0, typeorm_1.Column)(),
-        __metadata("design:type", String)
+        (0, typeorm_1.Column)({ type: 'date' }),
+        __metadata("design:type", Date)
     ], User.prototype, "dataNascita", void 0);
     __decorate([
         (0, typeorm_1.Column)(),
@@ -53,6 +53,10 @@ var User = /** @class */ (function () {
         (0, typeorm_1.OneToOne)(function () { return streamer_entity_1.Streamer; }, function (streamer) { return streamer.user; }),
         __metadata("design:type", streamer_entity_1.Streamer)
     ], User.prototype, "streamer", void 0);
+    __decorate([
+        (0, typeorm_1.OneToOne)(function () { return portafoglio_entity_1.Portafoglio; }, function (portafoglio) { return portafoglio.user; }),
+        __metadata("design:type", portafoglio_entity_1.Portafoglio)
+    ], User.prototype, "portafoglio", void 0);
     User = __decorate([
         (0, typeorm_1.Entity)()
     ], User);

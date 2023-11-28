@@ -21,7 +21,8 @@ var Viewer = /** @class */ (function () {
     ], Viewer.prototype, "idViewer", void 0);
     __decorate([
         (0, typeorm_1.OneToOne)(function () { return user_entity_1.User; }, function (user) { return user.viewer; }),
-        (0, typeorm_1.JoinColumn)(),
+        (0, typeorm_1.JoinColumn)({ name: "idUser" }) //chi avrà la colonna
+        ,
         __metadata("design:type", user_entity_1.User)
     ], Viewer.prototype, "user", void 0);
     Viewer = __decorate([

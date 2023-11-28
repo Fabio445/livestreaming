@@ -5,6 +5,11 @@ import { Viewer } from "./viewer/entities/viewer.entity"
 import { Streamer } from "./streamer/entities/streamer.entity"
 import { Social } from "./social/entities/social.entity"
 import { Canale } from "./canale/entities/canale.entity"
+import { Portafoglio } from "./portafoglio/entities/portafoglio.entity"
+import { Guest } from "./guest/entities/guest.entity"
+import { Tag } from "./tag/entities/tag.entity"
+import { Categoria } from "./categoria/entities/categoria.entity"
+import { Live } from "./live/entities/live.entity"
  
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -14,7 +19,7 @@ export const AppDataSource = new DataSource({
     database: "test2",
     synchronize: false,
     logging: false,
-    entities: [User, Viewer, Streamer, Social, Canale],
+    entities: [User, Viewer, Streamer, Social, Canale, Portafoglio, Guest, Tag, Categoria, Live],
     migrations: ['src/migrations/**/*.ts'],
     subscribers: [],
 })

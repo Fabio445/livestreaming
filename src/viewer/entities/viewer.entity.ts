@@ -10,8 +10,8 @@ export class Viewer {
 	idViewer: number
 
 	
-    @OneToOne(() => User, user => user.viewer)
-    @JoinColumn()
-    user: User;
+   @OneToOne(() => User, user => user.viewer)
+    @JoinColumn({name: "idUser"})  //chi avrà la colonna
+    user: User; 
  }
 

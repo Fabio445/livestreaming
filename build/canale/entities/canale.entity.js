@@ -38,7 +38,8 @@ var Canale = /** @class */ (function () {
         __metadata("design:type", Array)
     ], Canale.prototype, "socials", void 0);
     __decorate([
-        (0, typeorm_1.OneToMany)(function () { return streamer_entity_1.Streamer; }, function (streamer) { return streamer.canale; }),
+        (0, typeorm_1.OneToOne)(function () { return streamer_entity_1.Streamer; }, function (streamer) { return streamer.canale; }),
+        (0, typeorm_1.JoinColumn)({ name: 'idStreamer' }),
         __metadata("design:type", streamer_entity_1.Streamer)
     ], Canale.prototype, "streamer", void 0);
     Canale = __decorate([
