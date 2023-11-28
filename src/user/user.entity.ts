@@ -10,11 +10,7 @@ export class User {
 	@Column()
 	username: string
 
-	@Column()
-	password: string
-
-	@Column()
-	email: string
-
 	// TODO add
 }
+
+//npx typeorm typeorm-ts-node-migration:generate ciao -d ./src/data-source.ts

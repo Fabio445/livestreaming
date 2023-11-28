@@ -16,7 +16,7 @@ import { UserModule } from './user/user.module';
       database: 'test',
       entities: [User],
       synchronize: false,
-      migrations: ['src/path-to-migrations-dir/**/*.ts'],
+      //migrations: ['src/migrations/**/*.ts'],
       subscribers: [],
     }),
 	UserModule
