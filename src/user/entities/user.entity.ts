@@ -3,6 +3,8 @@ import { Portafoglio } from "../../portafoglio/entities/portafoglio.entity";
 import { Canale } from "../../canale/entities/canale.entity";
 import { ChatPrivata } from "../../chat-privata/entities/chat-privata.entity";
 import { Subscription } from "../../subscription/entities/subscription.entity";
+import { Live } from "../../live/entities/live.entity";
+import { Watch } from "../../watch/entities/watch.entity";
 
 @Entity()
 export class User {
@@ -52,5 +54,8 @@ export class User {
 
 	@OneToMany(() => Subscription, subscription => subscription.user)
 	subscription: Subscription;
+
+	@OneToMany(() => Watch, watch => watch.user)
+	watch: Watch;
 
 }

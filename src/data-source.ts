@@ -13,6 +13,7 @@ import { ChatPrivata } from "./chat-privata/entities/chat-privata.entity"
 import { Privilegi } from "./privilegi/entities/privilegi.entity"
 import { Subscription } from "./subscription/entities/subscription.entity"
 import { Media } from "./media/entities/media.entity"
+import { Watch } from "./watch/entities/watch.entity"
  
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -22,7 +23,7 @@ export const AppDataSource = new DataSource({
     database: "test2",
     synchronize: false,
     logging: false,
-    entities: [User, Social, Canale, Portafoglio, Guest, Tag, Categoria, Live, Transazione, ChatPrivata, Privilegi, Subscription, Media],
+    entities: [User, Social, Canale, Portafoglio, Guest, Tag, Categoria, Live, Transazione, ChatPrivata, Privilegi, Subscription, Media, Watch],
     migrations: ['src/migrations/**/*.ts'],
     subscribers: [],
 })

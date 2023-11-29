@@ -1,7 +1,8 @@
-import { PrimaryGeneratedColumn, Column, Entity, JoinColumn, ManyToOne, JoinTable, ManyToMany } from "typeorm";
+import { PrimaryGeneratedColumn, Column, Entity, JoinColumn, ManyToOne, JoinTable, ManyToMany, OneToMany } from "typeorm";
 import { Categoria } from "../../categoria/entities/categoria.entity";
 import { Canale } from "../../canale/entities/canale.entity";
 import { Tag } from "../../tag/entities/tag.entity";
+import { Watch } from "../../watch/entities/watch.entity";
 
 @Entity()
 export class Live {
@@ -35,4 +36,8 @@ export class Live {
 	@ManyToMany(() => Tag)
 	@JoinTable({ name: 'LiveTag' })
 	tag: Tag[];
+
+	
+	@OneToMany(() => Watch, watch => watch.live)
+	watch: Watch;
 }

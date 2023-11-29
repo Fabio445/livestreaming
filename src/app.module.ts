@@ -28,6 +28,8 @@ import { SubscriptionModule } from './subscription/subscription.module';
 import { Subscription } from './subscription/entities/subscription.entity';
 import { MediaModule } from './media/media.module';
 import { Media } from './media/entities/media.entity';
+import { WatchModule } from './watch/watch.module';
+import { Watch } from './watch/entities/watch.entity';
 
 
 @Module({
@@ -39,7 +41,7 @@ import { Media } from './media/entities/media.entity';
       username: 'root',
       password: '',
       database: 'test2',
-      entities: [User, Social, Canale, Portafoglio, Guest, Tag, Categoria, Live, Transazione, ChatPrivata, Privilegi, Subscription, Media],
+      entities: [User, Social, Canale, Portafoglio, Guest, Tag, Categoria, Live, Transazione, ChatPrivata, Privilegi, Subscription, Media, Watch],
       synchronize: false,
       migrations: ['src/migrations/**/*.ts'],
       subscribers: [],
@@ -57,6 +59,7 @@ import { Media } from './media/entities/media.entity';
 	PrivilegiModule,
 	SubscriptionModule,
 	MediaModule,
+	WatchModule,
   ],
   controllers: [AppController],
   providers: [AppService],
