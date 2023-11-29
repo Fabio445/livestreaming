@@ -1,8 +1,6 @@
 import "reflect-metadata"
-import { DataSource } from "typeorm"
+import { DataSource, Transaction } from "typeorm"
 import { User } from "./user/entities/user.entity"
-import { Viewer } from "./viewer/entities/viewer.entity"
-import { Streamer } from "./streamer/entities/streamer.entity"
 import { Social } from "./social/entities/social.entity"
 import { Canale } from "./canale/entities/canale.entity"
 import { Portafoglio } from "./portafoglio/entities/portafoglio.entity"
@@ -10,6 +8,11 @@ import { Guest } from "./guest/entities/guest.entity"
 import { Tag } from "./tag/entities/tag.entity"
 import { Categoria } from "./categoria/entities/categoria.entity"
 import { Live } from "./live/entities/live.entity"
+import { Transazione } from "./transazione/entities/transazione.entity"
+import { ChatPrivata } from "./chat-privata/entities/chat-privata.entity"
+import { Privilegi } from "./privilegi/entities/privilegi.entity"
+import { Subscription } from "./subscription/entities/subscription.entity"
+import { Media } from "./media/entities/media.entity"
  
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -19,7 +22,7 @@ export const AppDataSource = new DataSource({
     database: "test2",
     synchronize: false,
     logging: false,
-    entities: [User, Viewer, Streamer, Social, Canale, Portafoglio, Guest, Tag, Categoria, Live],
+    entities: [User, Social, Canale, Portafoglio, Guest, Tag, Categoria, Live, Transazione, ChatPrivata, Privilegi, Subscription, Media],
     migrations: ['src/migrations/**/*.ts'],
     subscribers: [],
 })

@@ -1,7 +1,8 @@
-import { PrimaryGeneratedColumn, Column, Entity, Timestamp, JoinColumn, OneToOne } from "typeorm";
-import { Streamer } from "../../streamer/entities/streamer.entity";
-import { Viewer } from "../../viewer/entities/viewer.entity";
+import { PrimaryGeneratedColumn, Column, Entity, Timestamp, JoinColumn, OneToOne, ManyToMany, OneToMany } from "typeorm";
 import { Portafoglio } from "../../portafoglio/entities/portafoglio.entity";
+import { Canale } from "../../canale/entities/canale.entity";
+import { ChatPrivata } from "../../chat-privata/entities/chat-privata.entity";
+import { Subscription } from "../../subscription/entities/subscription.entity";
 
 @Entity()
 export class User {
@@ -24,17 +25,32 @@ export class User {
 	@Column()
 	numeroTelefono: string
 
+	
+	@Column({type: 'boolean', default: true})
+	viewer: boolean  //true=viewer  false=streamer
+
+	@Column({type: 'boolean', default: false})
+	streamer: boolean
+
 	@Column({ type: 'timestamp', nullable: true })
 	deleteAt: Date;
 
-
-	@OneToOne(() => Viewer, viewer => viewer.user)
-	viewer: Viewer;
-
-	@OneToOne(() => Streamer, streamer => streamer.user)
-	streamer: Streamer;
+	@OneToOne(() => Canale, canale => canale.user)
+    canale: Canale; 
 
 	@OneToOne(() => Portafoglio, portafoglio => portafoglio.user)
 	portafoglio: Portafoglio;
+
+	@OneToOne(() => ChatPrivata, chatprivata => chatprivata.sender)
+	chat1: ChatPrivata;
+
+	@OneToOne(() => ChatPrivata, chatprivata => chatprivata.recever)
+	chat2: ChatPrivata;
+
+	/*@ManyToMany(() => Canale, canale => canale.follow)
+	canaleseguito: Canale;*/
+
+	@OneToMany(() => Subscription, subscription => subscription.user)
+	subscription: Subscription;
 
 }

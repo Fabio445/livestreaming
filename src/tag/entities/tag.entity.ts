@@ -1,4 +1,5 @@
-import { PrimaryGeneratedColumn, Column, Entity } from "typeorm";
+import { PrimaryGeneratedColumn, Column, Entity, ManyToMany } from "typeorm";
+import { Live } from "../../live/entities/live.entity";
 
 @Entity()
 export class Tag {
@@ -9,4 +10,6 @@ export class Tag {
 	@Column()
 	nome: string
  
+	/*@ManyToMany(() => Live, live => live.tag)
+	live: Live[];*/
 }
